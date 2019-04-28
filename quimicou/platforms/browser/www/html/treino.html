@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title> Exercitando</title>
+        <!-- <link rel="icon" href="..//q.ico"> -->
+        <link rel="stylesheet" href="../css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="../css/treino.css"/>
+        <script type="text/javascript" src="../js/treino.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body {
+            position: relative;
+        }
+        #menu{
+            position: 0;
+        }
+    </style>
+    </head> 
+    <!-- <body onload="verificar()" > -->
+    <body>
+        <div class="container">
+            <div class="cabecalho row" >
+                <h1 class="h1">Exercícios</h1>
+            </div> 
+            <div class="row" >
+                <h2>Agora é sua vez de tentar!Distribua o seguite elemento:</h2>
+                <br>
+                <!-- style="float:left;display:inline" -->
+                <div class="col-md " id="elemento">
+                    <sup><h6 style="display:inline;">4</h6></sup><h3>Be</h3>
+                </div>
+                
+                <div class="col-md" >
+                    <button class="btn btn-primary" onclick="verificar()" >Verificar</button>
+                    <button class="btn btn-primary" onclick="escolher()"> Escolher</button>
+                    <button class="btn btn-primary" onclick="sortear()">Sortear</button>
+                </div>
+                <div class="container" style="padding:5px">
+                    <!-- <textarea autofocus  id="respostaUser" style="width:40em" placeholder="Ex:1s2 2s2 2p6..." ></textarea> -->
+                    <textarea autofocus class="form-control" id="respostaUser" placeholder="Ex:1s2 2s2 2p6..." ></textarea>
+                
+                    <div id="resultado"></div>
+                    <div id="respostaUserDiv"></div>
+                    <div id="resposta"></div>
+                    <div id="info">
+                        <!--
+                            <h6>Informações adicionais</h6>
+                        -->
+                        <p id="nivelMaisEnergetico"></p>
+                        <p id="nivelMaisExterno"></p>
+                </div>
+                </div>
+            </div>
+            <div id = "menu" class="inferior fixed-bottom">
+                <table class="table">
+                    <tr>
+                        <th scope="col" onclick="window.location.href = './index.html';">
+                            <a href="../index.html">
+                                <img class="icon" src="../img/home.svg"/> 
+                                <!-- <i class="material-icons" style="font-size:50px">home </i> -->
+                                <label>Quimicou</label>
+                            </a>
+                        </th>
+                        <th scope="col" onclick="window.location.href = './html/distribuidor.html';">
+                            <a href="./distribuidor.html"> 
+                                <img class="icon" src="../img/tablet.svg"/> 
+                                <!-- <i class="material-icons" style="font-size:50px">tablet</i> -->
+                                <label>Distribuidor</label>
+                            </a>
+                        </th> 
+                        <th scope="col" onclick="window.location.href = './html/tabela.html';">
+                            <a href="./tabela.html">
+                                <img class="icon" src="../img/tab.svg"/>  
+                                <!-- <i class="material-icons" style="font-size:50px">table</i> -->
+                                <label>Tabela</label>
+                            </a>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

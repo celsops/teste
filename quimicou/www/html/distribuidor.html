@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Distribuidor</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="../icones/q.ico">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+        <link rel="stylesheet" href="../css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/distribuidor.css"/>        
+        <script type="text/javascript" src="../js/distribuidor.js"></script>
+    </head>
+    <body>
+        <div class="container" >
+            <div class="cabecalho row ">
+                <h1 class="h1">Distribuidor</h1>
+            </div>
+            <!-- 
+                style="margin: 10% 0% 15% 40%" 
+                style="width:15em; word-wrap: break-word;"
+                align-items-end
+            -->
+            <div class="box">
+                <div class="col align-items-center ">
+                    <div style="font-size:40px" class="row align-items-center" id="resposta" ></div>
+                    <div class="row align-items-center">
+                        <input class="form-control" type="number" name="natomico" id="natomico" value="" placeholder="nº entre 1 e 118"/>
+    
+                        <button class="btn btn-primary" onclick="mostrar()">Distribuir</button>
+                    </div>
+                </div>
+            </div>
+            <div class="inferior fixed-bottom align-items-end">
+                    <table class="table">
+                        <tr>
+                            <th scope="col" onclick="window.location.href = './index.html';">
+                                <a href="../index.html">
+                                    <img class="icon" src="../img/home.svg"/> 
+                                    <!-- <i class="material-icons" style="font-size:50px">home </i> -->
+                                    <label>Quimicou</label>
+                                </a>
+                            </th>
+                            <th scope="col" onclick="window.location.href = './html/distribuidor.html';">
+                                <a href="./distribuidor.html"> 
+                                    <img class="icon" src="../img/tablet.svg"/> 
+                                    <!-- <i class="material-icons" style="font-size:50px">tablet</i> -->
+                                    <label>Distribuidor</label>
+                                </a>
+                            </th> 
+                            <th scope="col" onclick="window.location.href = './html/tabela.html';">
+                                <a href="./tabela.html">
+                                    <img class="icon" src="../img/tab.svg"/>  
+                                    <!-- <i class="material-icons" style="font-size:50px">table</i> -->
+                                    <label>Tabela</label>
+                                </a>
+                            </th>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Quimicou",
+  "short_name": "Quimicou",
+  "version": "com.phonegap.helloworld",
+  "description": "Bem vindo ao diagrama de linus",
+  "author": "Celso Leandro Nascimento Vasconcelos",
+  "icons": [],
+  "start_url": "index.html"
+}

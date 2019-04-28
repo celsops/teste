@@ -1,0 +1,14 @@
+#elemento{
+	color: black;
+	padding: 10px 10px;
+}
+h3 {
+	display: inline; 
+}
+.spanIncorreto{
+	color:red;
+}
+.title{
+	font-weight:bold;
+}
+ 
