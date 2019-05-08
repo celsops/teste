@@ -1,16 +1,20 @@
 <html>
-    <head> 
+    <head>
         <title> Exercitando</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="../icones/q.ico">
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
         <link rel="stylesheet" href="../css/main.css"/>
         <link rel="stylesheet" type="text/css" href="../css/treino.css"/>
-        <script type="text/javascript" src="../js/treino.js"></script>
+        <script type="text/javascript" src="../js/ions.js"></script>
+        <style>
+        #menu{
+            position: static;
+        }
+        </style>
     </head>
     <!-- <body onload="distribuir(17,'ex1',2);distribuir(8,'ex2',2);distribuir(12,'ex3',3);distribuir(13,'ex4',3);"> -->
-    <body>
+    <body onload= "">
         <div class = "container">
             <div class="cabecalho row">
                 <h1 class="h1">Exercícios</h1>
@@ -19,21 +23,23 @@
                 <h2>Agora é sua vez de tentar!Distribua o seguite íon:</h2>
                 <br>
                 <!-- <div id="elemento" style="float: left;"  > -->
-                <div class="col-md" id="elemento" >
-                    <sup><h6 style="display:inline;">4</h6></sup><h3>Be</h3><sup>-2</sup>
+                <!-- <div class="col-md" id="elemento" -->
+                <div class="col-md" id="elemento">
+                    <sup><h6 style="display:inline;" id="numeroAtomico"></h6></sup><h3 id="elementoQuimico"></h3><sup id="sinal"></sup>
                 </div>
-                
+
                 <!-- <div style="float: right"> -->
-                <div class="col-md">
-                    <button class="btn btn-primary" onclick="escolher()"> Escolher</button> 
-                    <button class="btn btn-primary" onclick="sortear()">Sortear</button>
-                    <button class="btn btn-primary" onclick="verificar()" >Verificar</button>
+                <div class="col-md" >
+                    <button class="btn btn-primary" onclick="verificarIons()" >Verificar</button>
+                    <button class="btn btn-primary" onclick="escolherIons()"> Escolher</button>
+                    <button class="btn btn-primary" onclick="sortearIons()">Sortear</button>
+
                 </div>
                 <!-- style="width:40em" -->
                 <div class = "container" style="padding:5px">
-                    <textarea autofocus class="form-control" id="respostaUser" placeholder="Ex:1s2 2s2 2p6..."></textarea>
+                    <textarea autofocus class="form-control" id="respostaUser" ></textarea>
                     <!-- </div> -->
-                    <!-- <div id="resposta"></div> -->  
+                    <!-- <div id="resposta"></div> -->
                     <div id="resultado"></div>
                     <div id="respostaUserDiv"></div>
                     <div id="resposta"></div>
@@ -44,29 +50,29 @@
                         <p id="nivelMaisEnergetico"></p>
                         <p id="nivelMaisExterno"></p>
                     </div>
-                
+
                 </div>
             </div>
-            <div class="inferior fixed-bottom">
+            <div id = "menu" class="inferior fixed-bottom">
                     <table class="table">
                         <tr>
-                            <th scope="col" onclick="window.location.href = './index.html';">
+                            <th scope="col" onclick="window.location.href = '../index.html';">
                                 <a href="../index.html">
-                                    <img class="icon" src="../img/home.svg"/> 
+                                    <img class="icon" src="../img/home.svg"/>
                                     <!-- <i class="material-icons" style="font-size:50px">home </i> -->
-                                    <label>Quimicou</label>
+                                    <label>QuimiLOL</label>
                                 </a>
                             </th>
-                            <th scope="col" onclick="window.location.href = './html/distribuidor.html';">
-                                <a href="./distribuidor.html"> 
-                                    <img class="icon" src="../img/tablet.svg"/> 
+                            <th scope="col" onclick="window.location.href = './escolha.html';">
+                                <a href="escolha.html">
+                                    <img class="icon" src="../img/tablet.svg"/>
                                     <!-- <i class="material-icons" style="font-size:50px">tablet</i> -->
                                     <label>Distribuidor</label>
                                 </a>
-                            </th> 
-                            <th scope="col" onclick="window.location.href = './html/tabela.html';">
-                                <a href="./tabela.html">
-                                    <img class="icon" src="../img/tab.svg"/>  
+                            </th>
+                            <th scope="col" onclick="window.location.href = './tabela.html';">
+                                <a href="tabela.html">
+                                    <img class="icon" src="../img/tab.svg"/>
                                     <!-- <i class="material-icons" style="font-size:50px">table</i> -->
                                     <label>Tabela</label>
                                 </a>

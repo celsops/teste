@@ -1,48 +1,61 @@
 <!doctype html>
-<html lang="pt-br"> 
+<html lang="pt-br">
     <head>
         <title>Diagrama de Linus</title>
         <meta charset="utf-8">
-        <link rel="icon" href="./icones/q.ico">
+        <!-- <link rel="icon" href="./icones/q.ico"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
         <link rel="stylesheet" href="./css/main.css"/>
         <style>
         .menu{
+          background-color: white;
+
             position: static;
+        }
+        .table{
+          background-color: white;
+        }
+        .body{
+          width: 100%;
+          height: auto;
+          background-image: url('./img/edmar.png');
+          background-repeat: no-repeat;
+          background-size:cover;
+          /* display:  */
+
+
+
         }
         </style>
     </head>
     <body>
         <div>
             <div class = "cabecalho ">
-                <h1 class="display-4">Quimicou</h1>
+                <h1 class="display-4" style="display:inline">Quimi</h1>
+                <h1 class="display-4" style="display:inline;color:#f4a442">LOL</h1>
             </div>
-            <div class="centro container" >
-                <a href="./html/treino.html"> <img class=" img-fluid imagem" src="./img/normal.png"/> </a>
-                <br>
-                <a href="html/ions.html"> <img class="img-fluid imagem " src="./img/ions.png"/> </a>
-            </div>
+            <img class="body" src="./img/edmar.png" alt="">
                 <div class="main inferior fixed-bottom">
                     <table class="table">
                         <tr>
                             <th scope="col" onclick="window.location.href = './index.html';">
                                 <a href="./index.html">
-                                    <img class="icon" src="./img/home.svg" /> 
+                                    <img class="icon" src="./img/home.svg" />
                                     <!-- <i class="material-icons" style="font-size:50px">home </i> -->
-                                    <label>Quimicou</label>
+                                    <label>QuimiLOL</label>
                                 </a>
                             </th>
-                            <th scope="col" onclick="window.location.href = './html/distribuidor.html';">
-                                <a href="./html/distribuidor.html"> 
-                                    <img class="icon" src="./img/tablet.svg"/> 
+                            <th scope="col" onclick="window.location.href = './html/escolha.html';">
+                                <a href="./html/escolha.html">
+                                    <img class="icon" src="./img/tablet.svg"/>
                                     <!-- <i class="material-icons" style="font-size:50px">tablet</i> -->
                                     <label>Distribuidor</label>
                                 </a>
-                            </th> 
+                            </th>
                             <th scope="col" onclick="window.location.href = './html/tabela.html';">
                                 <a href="./html/tabela.html">
-                                    <img class="icon" src="./img/tab.svg"/>  
+                                    <img class="icon" src="./img/tab.svg"/>
                                     <!-- <i class="material-icons" style="font-size:50px">table</i> -->
                                     <label>Tabela</label>
                                 </a>
@@ -50,6 +63,6 @@
                         </tr>
                     </table>
                 </div>
-            </div>    
+            </div>
     </body>
 </html>

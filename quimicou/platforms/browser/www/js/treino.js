@@ -1,11 +1,11 @@
 var elementos = [
-    'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na', 'Mg', 'Al', 'Si', 
+    'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na', 'Mg', 'Al', 'Si',
     'P', 'S', 'Cl', 'Ar', 'K', 'Ca', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni',
-    'Cu', 'Zn', 'Ga', 'Ge', 'As', 'Se', 'Br', 'Kr', 'Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo', 
-    'Tc', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn', 'Sb', 'Te', 'I', 'Xe', 'Cs', 'Ba', 
-    'La', 'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 
-    'Lu', 'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg', 'Tl', 'Pb', 'Bi', 'Po', 
-    'At', 'Rn', 'Fr', 'Ra', 'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu', 'Am', 'Cm', 'Bk', 'Cf', 
+    'Cu', 'Zn', 'Ga', 'Ge', 'As', 'Se', 'Br', 'Kr', 'Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo',
+    'Tc', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn', 'Sb', 'Te', 'I', 'Xe', 'Cs', 'Ba',
+    'La', 'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb',
+    'Lu', 'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg', 'Tl', 'Pb', 'Bi', 'Po',
+    'At', 'Rn', 'Fr', 'Ra', 'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu', 'Am', 'Cm', 'Bk', 'Cf',
     'Es', 'Fm', 'Md', 'No', 'Lr', 'Rf', 'Db', 'Sg', 'Bh', 'Hs', 'Mt', 'Ds', 'Rg','Cn',
     'Nh','Fl','Mc','Lv','Ts','Og','Uue','Ubn'
 ];
@@ -15,6 +15,7 @@ var dic = {
     "4f": "5d","5d": "6p","6p": "7s","7s": "5f","5f": "6d","6d": "7p",
     "7p": "fim"
 };
+
 var naEscolhido=4;
 function sortear(){
     let i = Math.floor(Math.random() * 100);
@@ -42,34 +43,39 @@ function escolher(){
     //return elementos[n];
 }
 function verificar(){
-    document.getElementById("menu").style.position = "static";
-    let respostaUser = document.getElementById("respostaUser").value.trim(); 
+    //document.getElementById("menu").style.position = "static";
+    let respostaUser = document.getElementById("respostaUser").value.trim();
     let respostaCorreta = resposta(naEscolhido).trim();
     let listaDados = comparaStrings(respostaCorreta,respostaUser);
 
-    document.getElementById("resposta").innerHTML ="<span> Resposta correta: </span>"+ listaDados[0];
-    document.getElementById('respostaUserDiv').innerHTML ="<span>Sua resposta:</span/>"+ listaDados[1];
     console.log(nivelMaisEnergetico(respostaCorreta));
-    console.log(nivelMaisEnergetico(respostaCorreta))
+    console.log(nivelMaisExterno(respostaCorreta));
     document.getElementById("resultado").innerHTML = "";
     if (listaDados[2]){
-        document.getElementById("resultado").innerHTML += "<img src=../img/correta.png class='icon' >"+"<br>";        
-        //document.getElementById("resultado").innerHTML += "Parabéns!!Sua resposta está correta!!";
+        // document.getElementById("resultado").innerHTML += "<img src=../img/correta.png class='icon' >"+"<br>";
+        document.getElementById("resultado").innerHTML += "<img src=../img/correta.svg class='icon' >";//+"<br>";
+        document.getElementById("resultado").innerHTML += "<p style='display:inline'>LOL Muito bem!Escolha outros elementos</p>";
     }
     else{
-        document.getElementById("resultado").innerHTML = "<img src=../img/errada.png class='icon' >"+"<br>";
+        // document.getElementById("resultado").innerHTML = "<img src=../img/errada.png class='icon' >"+"<br>";
+        document.getElementById("resposta").innerHTML ="<span> Resposta correta: </span>"+ listaDados[0];
+        document.getElementById('respostaUserDiv').innerHTML ="<span>Sua resposta:</span/>"+ listaDados[1];
+
+        document.getElementById("resultado").innerHTML = "<img src=../img/errada.svg class='icon' >";//+"<br>";
+        document.getElementById("resultado").innerHTML += "<p style='display:inline'>OPSLOL...</p><p>Não desanime!Revise o diagrama</p>";
+
     }
     document.getElementById("info").innerHTML = "<br>"+
     "<h4 class='title'>Infomações adicionais</h4>"+
-    "<p>Nivel mais energético: "+nivelMaisEnergetico(respostaCorreta).slice(0,2)+"</p>"+
-    "<p>Nivel mais externo: "+ nivelMaisEnergetico(respostaCorreta).slice(0,2)+"</p>";
+    "<p>Sub nível mais energético: "+nivelMaisEnergetico(respostaCorreta).slice(0,2)+"</p>"+
+    "<p>Sub nível mais externo: "+ nivelMaisExterno(respostaCorreta).slice(0,2)+"</p>";
 }
 function nivelMaisEnergetico(respostaCorreta){
-    respostaCorreta = respostaCorreta.split(" ");
+    respostaCorreta = respostaCorreta.trim().split(" ");
     return respostaCorreta[respostaCorreta.length-1]
 }
 function nivelMaisExterno(respostaCorreta){
-    respostaCorreta = respostaCorreta.split(" ");
+    respostaCorreta = respostaCorreta.trim().split(" ");
     let maisExterno = respostaCorreta[0];
     for (let i=0;i<respostaCorreta.length;i++){
         if (maisExterno[0]<respostaCorreta[i][0]){
@@ -90,7 +96,7 @@ function comparaStrings(string1,string2){
     for (let i=0;i<t;i++){
         s1 = string1[i];
         s2 = string2[i];
-        if (s2!= undefined){    
+        if (s2!= undefined){
             if (s1!=s2){
                 string2Formatada += "<span class='spanIncorreto'> "+s2+" </span>";
                 iguais=false;
@@ -104,7 +110,7 @@ function comparaStrings(string1,string2){
         }
         if (s2==undefined && s1!=undefined){
             iguais=false;
-        }        
+        }
 
     }
     dados.push(string1Formatada,string2Formatada,iguais);
@@ -130,7 +136,7 @@ function resposta(n) {
     }
     return string1;
 }
-function distribuir(n,id,tipo) {
+function distribuir(n,tipo,id="") {
     /*
     tipos:
     1>>>Neutro
@@ -159,9 +165,10 @@ function distribuir(n,id,tipo) {
                 string = "<sup>"+n+"</sup>"+ elementos[n-1]+"<sup>+"+falta+"</sup>"+" - "+ string;
             }
             falta=0;
-        }        
+        }
     }
     document.getElementById(id).innerHTML = string;
+    return string;
 }
 function defineCapacidade(s) {
     if (s == "s") {
@@ -175,3 +182,8 @@ function defineCapacidade(s) {
     }
 }
 //distribuir(1,'ex1');
+function distribuicaoCompacta(respostaCerta){
+ let externo = nivelMaisExterno(respostaCorreta)
+
+
+}
